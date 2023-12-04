@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Calculator</title>
+</head>
+
+<body>
+
+    <h2>Basic Calculator</h2>
+
+    <label for="num1">Enter Number 1: </label>
+    <input type="text" id="num1">
+    <br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="results"></div>
+
+    <script>
+        function calculate() {
+            // Get the input values
+            var num1 = parseFloat(document.getElementById("num1").value);
+
+            // Create a copy of num1 for the operations
+            var num = num1;
+
+            // Perform calculations
+            ++num;
+            var numPlusPlus = num;
+
+            num++;
+            var numPlusPlusAfter = num;
+
+            --num;
+            var numMinusMinus = num;
+
+            num--;
+            var numMinusMinusAfter = num;
+
+            // Display the results
+            var resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "<strong>Results:</strong><br>" +
+                "++num: " + numPlusPlus + "<br>" +
+                "num++: " + numPlusPlusAfter + "<br>" +
+                "--num: " + numMinusMinus + "<br>" +
+                "num--: " + numMinusMinusAfter + "<br>";
+        }
+    </script>
+
+</body>
+
+</html>

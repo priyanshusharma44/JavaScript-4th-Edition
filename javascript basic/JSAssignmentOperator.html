@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Calculator</title>
+</head>
+
+<body>
+
+    <h2>Basic Calculator</h2>
+
+    <label for="num1">Enter Number 1: </label>
+    <input type="text" id="num1">
+    <br>
+    <label for="num2">Enter Number 2: </label>
+    <input type="text" id="num2">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="results"></div>
+
+    <script>
+        function calculate() {
+            // Get the input values
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // Check if the input is valid
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+
+            // Initialize results
+            var result = 0;
+
+            // Accumulate results with specified operators
+            result += num1 + num2;
+            result -= num1 - num2;
+            result *= num1 * num2;
+            result /= num1 / num2;
+
+            // Display the results
+            var resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "<strong>Results:</strong><br>" +
+                "=+ " + (num1 + num2) + "<br>" +
+                "-= " + (num1 - num2) + "<br>" +
+                "*= " + (num1 * num2) + "<br>" +
+                "/= " + (num1 / num2) + "<br>" +
+                "Accumulated Result: " + result;
+        }
+    </script>
+
+</body>
+
+</html>

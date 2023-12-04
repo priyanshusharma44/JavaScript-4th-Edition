@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Calculator</title>
+</head>
+
+<body>
+
+    <h2>Basic Calculator</h2>
+
+    <label for="num1">Enter Number 1: </label>
+    <input type="text" id="num1">
+<br>
+    <label for="num2">Enter Number 2: </label>
+    <input type="text" id="num2">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="results"></div>
+
+    <script>
+        function calculate() {
+            // Get the input values
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // Check if the input is valid
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+
+            // Perform calculations
+            var addition = num1 + num2;
+            var subtraction = num1 - num2;
+            var multiplication = num1 * num2;
+            var division = num1 / num2;
+
+            // Display the results
+            var resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "<strong>Results:</strong><br>" +
+                "Addition: " + addition + "<br>" +
+                "Subtraction: " + subtraction + "<br>" +
+                "Multiplication: " + multiplication + "<br>" +
+                "Division: " + division;
+        }
+    </script>
+
+</body>
+
+</html>
