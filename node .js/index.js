@@ -1,52 +1,24 @@
-// const express = require("express");
-// const { testFunction } = require("./controllers/testControllers");
-// const app = express();
+// index.js
 
-// app.get("/", (req, res) => {
-//   res.json({
-//     message: "Hello World from / route",
-//   });
-// });
-// app.get("/about", testFunction);
+const express = require("express");
+const app = express();
+const db = require("./modules/index");
+const blogController = require("./controllers/blogController");
+const { create } = require("hbs");
 
-// let PORT = 3000;
-// app.listen(PORT, () => {
-//   console.log(`Server starting in ${PORT}`);
-// });
-// const s = require("./superhero");
-// const superhero = require("./superhero");
-// console.log(s);
-// // const math = require("./math.js");
-// // const { add, sub } = math;
-// // console.log(add(2, 4));
-// // console.log(sub(2, 4));
+// Sync the Sequelize models with the database
+db.sequelize.sync({ force: false });
 
-const dbConfig = require("./controllers/dbConfig/dbConfig");
-const Sequelize = require("sequelize");
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-const sequelize = new Sequelize(
-  dbConfig.db,
-  dbConfig.username,
-  dbConfig.password,
-  {
-    host: dbConfig.host,
-    dialect: dbConfig.dialect,
-    pool: {
-      max: dbConfig.pool.max,
-      min: dbConfig.pool.min,
-      accurate: dbConfig.pool.accurate, // Corrected property name
-      idle: dbConfig.pool.idle,
-    },
-  }
-);
+const createRoutes = require("./controllers/routes/blog.js");
 
-const connectDatabase = async () => {
-  try {
-    await sequelize.authenticate();
-    console.log("Connection has been established successfully.");
-  } catch (error) {
-    console.error("Unable to connect to the database:", error);
-  }
-};
+// Use the blogController for the /blogs routes
+app.use("/blogs", createRoutes);
 
-connectDatabase();
+// Start the server
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server starting in ${PORT}`);
+});
