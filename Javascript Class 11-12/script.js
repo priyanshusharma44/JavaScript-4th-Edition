@@ -107,6 +107,153 @@ while (k < 5) {
   k++;
 }
 
+// Creating an array
+let fruits = ['apple', 'banana', 'orange'];
+
+// Accessing elements of an array
+console.log(fruits[0]); // Output: 'apple'
+
+// Modifying elements of an array
+fruits[1] = 'grape';
+console.log(fruits); // Output: ['apple', 'grape', 'orange']
+
+// Array methods
+console.log(fruits.length); // Output: 3
+fruits.push('pear'); // Add element to end
+console.log(fruits); // Output: ['apple', 'grape', 'orange', 'pear']
+
+// Function declaration
+function greet(name) {
+    return 'Hello, ' + name + '!';
+}
+
+// Function call
+console.log(greet('John')); // Output: 'Hello, John!'
+
+// Regular function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const add = (a, b) => a + b;
+
+console.log(add(2, 3)); // Output: 5
+//onclick
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Example</title>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+
+    <script>
+        // Get the button element
+        const button = document.getElementById('myButton');
+
+        // Add click event listener
+        button.addEventListener('click', function() {
+            console.log('Button clicked!');
+            // You can perform any action here
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color Example</title>
+</head>
+<body>
+    <button id="colorButton">Change Color</button>
+
+    <script>
+        const colorButton = document.getElementById('colorButton');
+
+        colorButton.addEventListener('click', function() {
+            document.body.style.backgroundColor = getRandomColor();
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color Example</title>
+</head>
+<body>
+    <button id="colorButton">Change Color</button>
+
+    <script>
+        const colorButton = document.getElementById('colorButton');
+
+        colorButton.addEventListener('click', function() {
+            document.body.style.backgroundColor = getRandomColor();
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Example</title>
+</head>
+<body>
+    <button id="incrementButton">Increment</button>
+    <p id="counter">0</p>
+
+    <script>
+        const incrementButton = document.getElementById('incrementButton');
+        const counterElement = document.getElementById('counter');
+        let counterValue = 0;
+
+        incrementButton.addEventListener('click', function() {
+            counterValue++;
+            counterElement.textContent = counterValue;
+        });
+    </script>
+</body>
+</html>
+
+
+
+
 // Functions
 function greet(name) {
   console.log("Hello, " + name + "!");
