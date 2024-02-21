@@ -135,6 +135,31 @@ function add(a, b) {
     return a + b;
 }
 
+// Regular function
+function createUser(name, age) {
+    return {
+        name: name,
+        age: age
+    };
+}
+
+// Arrow function with implicit return
+const createUserArrow = (name, age) => ({ name, age });
+
+console.log(createUser('Alice', 30)); // Output: { name: 'Alice', age: 30 }
+console.log(createUserArrow('Alice', 30)); // Output: { name: 'Alice', age: 30 }
+
+// Regular function
+function add(a, b) {
+    return a + b;
+}
+
+// Arrow function
+const addArrow = (a, b) => a + b;
+
+console.log(add(2, 3)); // Output: 5
+console.log(addArrow(2, 3)); // Output: 5
+
 // Arrow function
 const add = (a, b) => a + b;
 
