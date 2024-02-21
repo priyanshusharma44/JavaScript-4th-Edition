@@ -347,7 +347,7 @@ document.getElementById("myDiv").appendChild(newParagraph);
 let elementToRemove = document.getElementById("myElementToRemove");
 elementToRemove.parentNode.removeChild(elementToRemove);
 
-
+//Jquery
 
 <!DOCTYPE html>
 <html lang="en">
