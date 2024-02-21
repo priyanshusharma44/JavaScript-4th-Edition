@@ -347,16 +347,68 @@ document.getElementById("myDiv").appendChild(newParagraph);
 let elementToRemove = document.getElementById("myElementToRemove");
 elementToRemove.parentNode.removeChild(elementToRemove);
 
-/*
-In Example 1, the textContent property of an element with the id "myHeading" is modified to change its text content to "New Heading Text".
 
-In Example 2, a new <p> element is created using document.createElement(), and its text content is set. Then, the new paragraph element is appended as a child of an element with the id "myDiv".
 
-In Example 3, an element with the id "myElementToRemove" is removed from the DOM by selecting its parent node and then using the removeChild() method to remove the specified child element.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example - Hide/Show</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#toggleButton").click(function(){
+                $("#toggleDiv").toggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="toggleButton">Toggle</button>
+    <div id="toggleDiv">
+        <p>This is a paragraph that will be toggled.</p>
+    </div>
+</body>
+</html>
 
-*/
 
-// Intermediate JavaScript ends here
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example - Change CSS on Hover</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: background-color 0.3s;
+        }
+        .box:hover {
+            background-color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".box").hover(function(){
+                $(this).css("background-color", "green");
+            }, function(){
+                $(this).css("background-color", "blue");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+
 
 // Introduction to PHP
 // (PHP code snippets can be added in PHP files, not directly within JavaScript)
