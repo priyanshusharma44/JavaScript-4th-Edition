@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>CV BCA</h1>
+    <form action="submit.php" method="post" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email"  name="email" required><br>
+        
+        <label for="education">Education:</label>
+        <input type="text" name="education"><br>
+        
+        <label for="experience">Work Experience:</label>
+        <textarea name="experience"></textarea><br>
+        
+        <label for="skills">Skills:</label>
+        <input type="text" name="skills"><br>
+        
+        <label for="image">Upload Image:</label>
+        <input type="file"  name="image"><br>
+        
+        <label for="cv">Upload CV - PDF:</label>
+        <input type="file" name="cv"><br>
+        
+        <input type="submit" value="Submit" name="submit">
+    </form>
+</body>
+</html>
+
+
+
