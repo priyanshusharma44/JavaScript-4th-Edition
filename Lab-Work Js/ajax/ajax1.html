@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phone Availability Check</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <form>
+      Phone Number: <input type="text" id="phone" name="phone" />
+      <span id="phone-status"></span>
+    </form>
+
+    <script>
+      $(document).ready(function () {
+        $("#phone").on("keyup", function () {
+          var phone = $(this).val();
+          $.ajax({
+            url: "check_phone.php",
+            method: "POST",
+            data: { phone: phone },
+            success: function (response) {
+              $("#phone-status").html(response);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

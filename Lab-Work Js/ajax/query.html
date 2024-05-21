@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show/Hide Div Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      #content {
+        display: none;
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggleButton">Show/Hide Content</button>
+    <div id="content">This is the content that will be shown or hidden.</div>
+
+    <script>
+      $(document).ready(function () {
+        $("#toggleButton").click(function () {
+          $("#content").toggle();
+        });
+      });
+    </script>
+  </body>
+</html>
