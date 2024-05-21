@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            loadTasks();
+
+            $("#addTask").click(function() {
+                var task = $("#task").val();
+                $.post("add_task.php", { task: task }, function(data) {
+                    alert(data);
+                    loadTasks();
+                });
+            });
+
+            function loadTasks() {
+                $.getJSON("get_tasks.php", function(data) {
+                    $("#taskList").empty();
+                    $.each(data, function(i, task) {
+                        var taskItem = $("<li></li>").text(task.task);
+                        if (task.completed) {
+                            taskItem.css("text-decoration", "line-through");
+                        }
+                        var deleteButton = $("<button>Delete</button>").click(function() {
+                            $.post("delete_task.php", { id: task.id }, function(data) {
+                                alert(data);
+                                loadTasks();
+                            });
+                        });
+                        var completeButton = $("<button>Complete</button>").click(function() {
+                            $.post("update_task.php", { id: task.id, completed: 1 }, function(data) {
+                                alert(data);
+                                loadTasks();
+                            });
+                        });
+                        taskItem.append(deleteButton).append(completeButton);
+                        $("#taskList").append(taskItem);
+                    });
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="task" placeholder="New task">
+    <button id="addTask">Add Task</button>
+    <ul id="taskList"></ul>
+</body>
+</html>

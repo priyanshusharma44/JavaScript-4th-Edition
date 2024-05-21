@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery List Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#addItem").click(function() {
+                var newItem = $("<li></li>").text("New Item");
+                $("#itemList").append(newItem);
+            });
+
+            $("#changeColor").click(function() {
+                $("#itemList li").css("color", "blue");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Item List</h1>
+    <button id="addItem">Add Item</button>
+    <button id="changeColor">Change Color</button>
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+</html>
