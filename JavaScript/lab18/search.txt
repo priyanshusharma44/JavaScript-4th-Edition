@@ -1,1 +1,27 @@
-jhjkhjfk fkjdhfkjdsf kjfhjskh kjdhfkj khkjhf kjhfkjhfjh STOP . hgfdhjgfhdjgf jhjkhdjhj
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>STUDENT FORM</h1>
+    <form>
+      <label for="Name">Name:</label>
+      <input type="text" />
+      <br /><br />
+      <label for="Name">Class:</label>
+      <input type="number" />
+      <br /><br />
+      <label for="Name">Subject:</label>
+      <input type="text" />
+      <br /><br />
+      <label for="Id">Id:</label>
+      <input type="email" />
+      <br /><br />
+      <label for="Id">Password:</label>
+      <input type="password" />
+    </form>
+  </body>
+</html>
